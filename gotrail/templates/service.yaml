@@ -1,0 +1,15 @@
+kind: Service
+metadata:
+  name: go-service
+  labels:
+    k8s-app: gotrial
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    k8s-app: gotrial
+  sessionAffinity: None
+  type: NodePort
+   

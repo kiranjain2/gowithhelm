@@ -1,0 +1,19 @@
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    k8s-app: bordered
+  name: nodered-service
+  selfLink: /api/v1/namespaces/default/services/nodered-service
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 1880
+    protocol: TCP
+    targetPort: 1880
+  selector:
+    k8s-app: bordered
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
